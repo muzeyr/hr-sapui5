@@ -1,0 +1,33 @@
+<mvc:View controllerName="ZEGITIM_HRZEGITIM_HR.controller.Main" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true" xmlns="sap.m">
+	<App>
+		<pages>
+			<Page title="{i18n>title}">
+				<content>
+					<Table noDataText="Drop column list items here and columns in the area above" id="persons" items="{PERSONELSet}">
+						<columns>
+						<Column>
+							<header>
+								<Label text="Id"/>
+							</header>
+						</Column>
+						<Column>
+							<header>
+								<Label text="FullName"/>
+							</header>
+						</Column>
+						</columns>
+						<items>
+							<ColumnListItem>
+								<cells>
+									<Text text="{PERSID}"/>
+									<Text text="{PERSNAME}"/>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
