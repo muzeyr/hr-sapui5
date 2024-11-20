@@ -65,7 +65,12 @@
 						</Column>
 						<Column>
 							<header>
-								<Label text="Status"/>
+								<Label text="    "/>
+							</header>
+						</Column>
+						<Column>
+							<header>
+								<Label text="Note"/>
 							</header>
 						</Column>
 					</columns>
@@ -81,6 +86,7 @@
 								<Text text="{path:'data>birthDate', formatter:'.formatter.formatAge'}"/>
 								<Text text="{vbap>Gender}"/>
 								<core:Icon src="{ path:'data>status', formatter:'.formatter.formatStatusIcon'}"/>
+								<Text text="{vbap>Note}"/>
 							</cells>
 						</ColumnListItem>
 					</items>
