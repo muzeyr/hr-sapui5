@@ -1,11 +1,11 @@
 {
 	"_version": "1.7.0",
 	"sap.app": {
-		"id": "ZEGITIM_HRZEGITIM_HR",
+		"id": "hr_reportzhr_report",
 		"type": "application",
 		"i18n": "i18n/i18n.properties",
 		"applicationVersion": {
-			"version": "1.0.0"
+			"version": "1.0.5"
 		},
 		"title": "{{appTitle}}",
 		"description": "{{appDescription}}",
@@ -14,8 +14,8 @@
 			"version": "0.0.0"
 		},
 		"dataSources": {
-			"ZEGITIM_HR_SRV": {
-				"uri": "/sap/opu/odata/sap/ZEGITIM_HR_SRV/",
+			"ZEGITIM_IK_SRV": {
+				"uri": "/sap/opu/odata/sap/ZEGITIM_IK_SRV/",
 				"type": "OData",
 				"settings": {
 					"odataVersion": "2.0",
@@ -45,8 +45,69 @@
 		]
 	},
 	"sap.ui5": {
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "hr_reportzhr_report.view",
+				"controlId": "app",
+				"controlAggregation": "pages",
+				"bypassed": {
+					"target": "notFound"
+				}
+			},
+			"routes": [
+				{
+					"pattern": "",
+					"name": "main",
+					"target": "Main"
+				},
+				{
+					"pattern": "detail/{id}",
+					"name": "detail",
+					"target": "Detail"
+				},
+				{
+					"pattern": "adress/{id}",
+					"name": "adress",
+					"target": "Adress"
+				},
+				{
+					"pattern": "leave/{id}",
+					"name": "leave",
+					"target": "Leave"
+				},
+				{
+					"pattern": "salary/{id}",
+					"name": "salary",
+					"target": "Salary"
+				}
+			],
+			"targets": {
+				"Main": {
+					"viewName": "Main",
+					"viewLevel": 1
+				},
+				"Detail": {
+					"viewName": "Detail",
+					"viewLevel": 2
+				},
+				"Adress": {
+					"viewName": "Adress",
+					"viewLevel": 3
+				},
+				"Leave": {
+					"viewName": "Leave",
+					"viewLevel": 4
+				},
+				"Salary": {
+					"viewName": "Salary",
+					"viewLevel": 5
+				}
+			}
+		},
 		"rootView": {
-			"viewName": "ZEGITIM_HRZEGITIM_HR.view.Main",
+			"viewName": "hr_reportzhr_report.view.Main",
 			"type": "XML"
 		},
 		"dependencies": {
@@ -69,10 +130,22 @@
 			"i18n": {
 				"type": "sap.ui.model.resource.ResourceModel",
 				"settings": {
-					"bundleName": "ZEGITIM_HRZEGITIM_HR.i18n.i18n"
+					"bundleName": "hr_reportzhr_report.i18n.i18n"
 				}
+			},
+			
+			"vbap": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "OneWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ZEGITIM_IK_SRV",
+				"preload":true
 			}
 		},
+		
 		"resources": {
 			"css": [
 				{

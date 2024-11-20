@@ -4,21 +4,24 @@
     xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
     <edmx:DataServices m:DataServiceVersion="2.0">
         <Schema
-            xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ZEGITIM_HR_SRV" xml:lang="tr" sap:schema-version="1">
-            <EntityType Name="PERSONEL" sap:content-version="1">
+            xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ZEGITIM_IK_SRV" xml:lang="tr" sap:schema-version="1">
+            <EntityType Name="Personel" sap:content-version="1">
                 <Key>
-                    <PropertyRef Name="PERSID"/>
+                    <PropertyRef Name="Id"/>
                 </Key>
-                <Property Name="PERSID" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
-                <Property Name="PERSNAME" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Id" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="FirstName" Type="Edm.String" Nullable="false" MaxLength="100" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="LastName" Type="Edm.String" Nullable="false" MaxLength="100" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
             </EntityType>
-            <EntityContainer Name="ZEGITIM_HR_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
-                <EntitySet Name="PERSONELSet" EntityType="ZEGITIM_HR_SRV.PERSONEL" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+            <EntityContainer Name="ZEGITIM_IK_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="PersonelSet" EntityType="ZEGITIM_IK_SRV.Personel" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
             </EntityContainer>
-            <atom:link
-                xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="./sap/ZEGITIM_HR_SRV/$metadata"/>
+            <Annotation
+                xmlns="http://docs.oasis-open.org/odata/ns/edm" Term="Core.SchemaVersion" String="1.0.0"/>
                 <atom:link
-                    xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="./sap/ZEGITIM_HR_SRV/$metadata"/>
-                </Schema>
-            </edmx:DataServices>
-        </edmx:Edmx>
+                    xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="./sap/ZEGITIM_IK_SRV/$metadata"/>
+                    <atom:link
+                        xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="./sap/ZEGITIM_IK_SRV/$metadata"/>
+                    </Schema>
+                </edmx:DataServices>
+            </edmx:Edmx>

@@ -1,0 +1,73 @@
+<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns="sap.m"
+	controllerName="hr_reportzhr_report.controller.Adress" displayBlock="true">
+	<App>
+		<pages>
+			<Page title="{i18n>title}">
+				<content>
+					<Panel id="panel0">
+						<content>
+							<Table noDataText="Drop column list items here and columns in the area above" id="idAddressTable" items="{vbap>/AdressSet}">
+								<columns>
+									<Column>
+										<header>
+											<Label text="Id"/>
+										</header>
+									</Column>
+									<Column>
+										<header>
+											<Label text="AdressId"/>
+										</header>
+									</Column>
+									<Column>
+										<header>
+											<Label text="Street"/>
+										</header>
+									</Column>
+									<Column>
+										<header>
+											<Label text="City"/>
+										</header>
+									</Column>
+									<Column>
+										<header>
+											<Label text="PostalCode"/>
+										</header>
+									</Column>
+									<Column>
+										<header>
+											<Label text="Country"/>
+										</header>
+									</Column>
+								</columns>
+								<items>
+									<ColumnListItem type="Navigation" press="onTableItemPress">
+										<cells>
+											<Text text="{vbap>Id}"/>
+											<Text text="{vbap>AdressId}"/>
+											<Text text="{vbap>Street}"/>
+											<Text text="{vbap>City}"/>
+											<Text text="{vbap>PostalCode}"/>
+											<Text text="{vbap>Country}"/>
+											<core:Icon src="{ path:'data>status', formatter:'.formatter.formatStatusIcon'}"/>
+										</cells>
+									</ColumnListItem>
+								</items>
+							</Table>
+						</content>
+					</Panel>
+				</content>
+				<footer>
+					<Toolbar>
+						<content>
+							<Button type="Back" text="Back" press="onNavBack"/>
+							<Button type="Back" text="Main Page" press="onMainPage"/>
+							<ToolbarSpacer/>
+							<Button type="Accept" text="Update" press="onButtonPress"/>
+							<Button text="Adress Detail" press="onAdressDetail"/>
+						</content>
+					</Toolbar>
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

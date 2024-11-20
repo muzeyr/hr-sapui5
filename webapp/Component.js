@@ -1,11 +1,11 @@
 sap.ui.define([
 	"sap/ui/core/UIComponent",
 	"sap/ui/Device",
-	"ZEGITIM_HRZEGITIM_HR/model/models"
+	"hr_reportzhr_report/model/models"
 ], function(UIComponent, Device, models) {
 	"use strict";
 
-	return UIComponent.extend("ZEGITIM_HRZEGITIM_HR.Component", {
+	return UIComponent.extend("hr_reportzhr_report.Component", {
 
 		metadata: {
 			manifest: "json"
@@ -17,9 +17,10 @@ sap.ui.define([
 		 * @override
 		 */
 		init: function() {
+		    console.log('Component'+ new Date())
 			// call the base component's init function
 			UIComponent.prototype.init.apply(this, arguments);
-
+            this.getRouter().initialize();
 			// set the device model
 			this.setModel(models.createDeviceModel(), "device");
 		}

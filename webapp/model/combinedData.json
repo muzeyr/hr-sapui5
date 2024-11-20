@@ -1,0 +1,107 @@
+{
+	"persons": [{
+		"id": 1,
+		"firstName": "John",
+		"lastName": "Doe",
+		"birthDate": "",
+		"gender": "Male",
+		"status": "active",
+		"birthPlace": "New York, USA"
+	}, {
+		"id": 2,
+		"firstName": "Jane",
+		"lastName": "Smith",
+		"birthDate": "1993-07-21",
+		"gender": "Female",
+		"status": "inactive",
+		"birthPlace": "London, UK"
+	}, {
+		"id": 3,
+		"firstName": "Ahmet",
+		"lastName": "Yılmaz",
+		"birthDate": "1988-03-05",
+		"gender": "Male",
+		"status": "active",
+		"birthPlace": "İstanbul, Türkiye"
+	}, {
+		"id": 4,
+		"firstName": "Anna",
+		"lastName": "Brown",
+		"birthDate": "1990-12-12",
+		"gender": "Female",
+		"status": "active",
+		"birthPlace": "Berlin, Germany"
+	}, {
+		"id": 5,
+		"firstName": "Mehmet",
+		"lastName": "Demir",
+		"birthDate": "1985-05-25",
+		"gender": "Male",
+		"status": "inactive",
+		"birthPlace": "Ankara, Türkiye"
+	}, {
+		"id": 6,
+		"firstName": "Olivia",
+		"lastName": "Johnson",
+		"birthDate": "1992-04-30",
+		"gender": "Female",
+		"status": "active",
+		"birthPlace": "Sydney, Australia"
+	}, {
+		"id": 7,
+		"firstName": "Murat",
+		"lastName": "Kaya",
+		"birthDate": "1980-11-01",
+		"gender": "Male",
+		"status": "active",
+		"birthPlace": "İzmir, Türkiye"
+	}, {
+		"id": 8,
+		"firstName": "Sophia",
+		"lastName": "Martinez",
+		"birthDate": "1996-01-15",
+		"gender": "Female",
+		"status": "inactive",
+		"birthPlace": "Madrid, Spain"
+	}, {
+		"id": 9,
+		"firstName": "Ali",
+		"lastName": "Çelik",
+		"birthDate": "1991-08-19",
+		"gender": "Male",
+		"status": "active",
+		"birthPlace": "Adana, Türkiye"
+	}, {
+		"id": 10,
+		"firstName": "Emily",
+		"lastName": "Taylor",
+		"birthDate": "1987-03-22",
+		"gender": "Female",
+		"status": "active",
+		"birthPlace": "Toronto, Canada"
+	}],
+	"places": [{
+		"id": 1,
+		"name": "Toronto, Canada"
+	}, {
+		"id": 2,
+		"name": "Madrid, Spain"
+	}, {
+		"id": 3,
+		"name": "İzmir, Türkiye"
+	}],
+	"genders": [{
+		"id": 1,
+		"name": "All"
+	}, {
+		"id": 2,
+		"name": "Male"
+	}, {
+		"id": 3,
+		"name": "Female"
+	}],
+	"filter": {
+		"gender": ""
+	}
+
+}

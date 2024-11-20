@@ -1,11 +1,28 @@
-<mvc:View controllerName="ZEGITIM_HRZEGITIM_HR.controller.Main" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
-	displayBlock="true" xmlns="sap.m">
-	<App>
+<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns="sap.m"
+	controllerName="hr_reportzhr_report.controller.Main" displayBlock="true">
+	<App id="app">
 		<pages>
 			<Page title="{i18n>title}">
 				<content>
-					<Table noDataText="Drop column list items here and columns in the area above" id="persons" items="{PERSONELSet}">
-						<columns>
+					<Toolbar>
+						<content>
+							<Label text="Gender"/>
+							<Select selectedKey="{data>/filter/gender}" items="{ path: 'data>/genders' }">
+								<core:Item key="{data>id}" text="{data>name}"/>
+						</Select>
+						<Label text="Full Name"/>
+						<Input value="{data>/filter/fullName}" submit="onFilter"/>
+						<Label text="Birth Place"/>
+						<Input value="{data>/filter/birthPlace}" valueHelpRequest="onPlaceOfBirthValueHelp" showValueHelp="true" placeholder="BirthPlace"/>
+						<Label text="Birth Date Range"/>
+						<DateRangeSelection value="{data>/filter/birtDate}"/>
+						<Label text="Active"/>
+						<CheckBox selected="{data>/filter/isActive}" select="onFilter"/>
+						<Button press="onFilter" text="Search"/>
+					</content>
+				</Toolbar>
+				<Table noDataText="Drop column list items here and columns in the area above" id="persons" items="{vbap>/PersonelSet}">
+					<columns>
 						<Column>
 							<header>
 								<Label text="Id"/>
@@ -16,18 +33,60 @@
 								<Label text="FullName"/>
 							</header>
 						</Column>
-						</columns>
-						<items>
-							<ColumnListItem>
-								<cells>
-									<Text text="{PERSID}"/>
-									<Text text="{PERSNAME}"/>
-								</cells>
-							</ColumnListItem>
-						</items>
-					</Table>
-				</content>
-			</Page>
-		</pages>
-	</App>
+						<!--	<Column>
+								<header>
+									<Label text="FirstName"/>
+								</header>
+							</Column>
+							<Column>
+								<header>
+									<Label text="LastName"/>
+								</header>
+							</Column>-->
+						<Column>
+							<header>
+								<Label text="Birth Place"/>
+							</header>
+						</Column>
+						<Column>
+							<header>
+								<Label text="BirthDate"/>
+							</header>
+						</Column>
+						<Column>
+							<header>
+								<Label text="Age"/>
+							</header>
+						</Column>
+						<Column>
+							<header>
+								<Label text="Gender"/>
+							</header>
+						</Column>
+						<Column>
+							<header>
+								<Label text="Status"/>
+							</header>
+						</Column>
+					</columns>
+					<items>
+						<ColumnListItem type="Navigation" press="onTableItemPress">
+							<cells>
+								<Text text="{vbap>Id}"/>
+								<Text text="{ parts: [ {path: 'vbap>FirstName'}, {path: 'vbap>LastName'} ], formatter:'.formatter.fullName'}"/>
+								<!--	<Text text="{data>firstName}"/>
+									<Text text="{data>lastName}"/>-->
+								<Text text="{vbap>BirthPlace}"/>
+								<Text text="{data>birthDate}"/>
+								<Text text="{path:'data>birthDate', formatter:'.formatter.formatAge'}"/>
+								<Text text="{vbap>Gender}"/>
+								<core:Icon src="{ path:'data>status', formatter:'.formatter.formatStatusIcon'}"/>
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+			</content>
+		</Page>
+	</pages>
+</App>
 </mvc:View>

@@ -1,0 +1,28 @@
+<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns="sap.m"
+	controllerName="hr_reportzhr_report.controller.Detail" displayBlock="true">
+	<App>
+		<pages>
+			<Page title="{i18n>title}">
+				<content>
+					<Panel id="panel0">
+						<content>
+							<Input width="100%" value="{detail>/id}" placeholder="{i18n>id}" submit="onButtonPress" editable="false"/>
+						</content>
+					</Panel>
+				</content>
+				<footer>
+					<Toolbar>
+						<content>
+							<Button type="Back" text="Back" press="onNavBack"/>
+							<ToolbarSpacer/>
+							<Button type="Accept" text="Update" press="onButtonPress"/>
+								<Button text="Adress Detail" press="onAdressDetail"/>
+								<Button text="Leave Detail" press="onLeaveDetail"/>
+								<Button text="Salary Detail" press="onSalaryDetail"/>
+						</content>
+					</Toolbar>
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
