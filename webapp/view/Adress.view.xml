@@ -38,6 +38,11 @@
 											<Label text="Country"/>
 										</header>
 									</Column>
+									<Column>
+										<header>
+											<Label text="Street"/>
+										</header>
+									</Column>
 								</columns>
 								<items>
 									<ColumnListItem type="Navigation" press="onTableItemPress">
@@ -48,6 +53,7 @@
 											<Text text="{vbap>City}"/>
 											<Text text="{vbap>PostalCode}"/>
 											<Text text="{vbap>Country}"/>
+											<Text text="{vbap>Street}"/>
 											<core:Icon src="{ path:'data>status', formatter:'.formatter.formatStatusIcon'}"/>
 										</cells>
 									</ColumnListItem>
