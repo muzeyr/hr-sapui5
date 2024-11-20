@@ -7,6 +7,7 @@
 					<Panel id="panel0">
 						<content>
 							<Input width="100%" value="{detail>/id}" placeholder="{i18n>id}" submit="onButtonPress" editable="false"/>
+							
 						</content>
 					</Panel>
 				</content>
